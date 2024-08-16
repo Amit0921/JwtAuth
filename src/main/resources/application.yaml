@@ -1,0 +1,34 @@
+#Settingup server port
+server:
+  port: 8080
+  
+spring:
+  application: 
+    name: JwtDemo
+#Database Configuration
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/jwtSecurity
+    username: postgres
+    password: password
+#setting default schema
+    hikari:
+      schema: user_schema
+      
+#Jpa Configuration
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        '[format_sql]': true
+        '[use_sql_comments]': true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+##------------------Security Specific Properties-------
+jwt:
+  secret:
+    key: f7bc6a8464fe149289acb79a34d4bc3c7ade068606c4fd7a43a0160833ed20fd
+    validity: 2600000000
