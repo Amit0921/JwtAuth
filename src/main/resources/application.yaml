@@ -1,6 +1,9 @@
 #Settingup server port
 server:
   port: 8080
+  servlet:
+    context-path: /portal
+  
   
 spring:
   application: 
@@ -31,4 +34,4 @@ spring:
 jwt:
   secret:
     key: f7bc6a8464fe149289acb79a34d4bc3c7ade068606c4fd7a43a0160833ed20fd
-    validity: 2600000000
+    validity: 3600000
